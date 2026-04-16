@@ -1,59 +1,89 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WayZen Career Compass</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --dark-teal: #2d5a61; --accent-yellow: #fbc02d; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: #fff; }
+        .hero { background: linear-gradient(135deg, #e0f2f1 0%, #fff9c4 100%); padding: 60px 0; border-radius: 0 0 50px 50px; }
+        .btn-teal { background-color: var(--dark-teal); color: white; border-radius: 12px; padding: 12px 25px; border: none; text-decoration: none; display: inline-block; }
+        .btn-yellow { background-color: var(--accent-yellow); color: var(--dark-teal); border-radius: 12px; padding: 12px 25px; border: none; font-weight: bold; text-decoration: none; display: inline-block; }
+        .card { border: none; border-radius: 20px; background: #f8f9fa; transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        #quiz-box { background: white; border-radius: 30px; border: 2px solid #e0f2f1; max-width: 600px; margin: 0 auto; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center fw-bold" href="#">
-                <img src="https://img.icons8.com/color/48/compass.png" width="30" class="me-2"> 
-                WayZen Career Compass
-            </a>
-            <div class="ms-auto d-none d-lg-flex">
-                <a class="nav-link px-3 text-dark" href="#">Главная</a>
-                <a class="nav-link px-3 text-dark" href="#">Профессии</a>
-                <a class="nav-link px-3 text-dark" href="#">Задачи из жизни</a>
-                <a class="nav-link px-3 text-dark" href="#">Компас интересов</a>
-                <a class="nav-link px-3 text-dark" href="#">Для команды</a>
-            </div>
+            <a class="navbar-brand fw-bold" href="#">🧭 WayZen Career Compass</a>
         </div>
     </nav>
 
-    <header class="py-5" style="background: linear-gradient(135deg, #e0f2f1 0%, #fff9c4 100%);">
-        <div class="container text-center py-5" style="max-width: 800px;">
-            <h1 class="display-4 fw-bold text-dark mb-4">WayZen Career Compass</h1>
-            <p class="lead text-secondary mb-5">
-                Материалы о профессиях, практические задачи из реальной практики и подбор ресурсов по вашим интересам и сильным сторонам.
-            </p>
+    <header class="hero text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">WayZen Career Compass</h1>
+            <p class="lead text-secondary mb-5">Материалы о профессиях, практические задачи и подбор ресурсов.</p>
             <div class="d-flex justify-content-center gap-3">
-                <a href="#catalog" class="btn btn-lg px-4" style="background-color: #2d5a61; color: white; border-radius: 12px;">К разделу профессий</a>
-                <a href="#test" class="btn btn-lg px-4" style="background-color: #fbc02d; color: #2d5a61; border-radius: 12px; font-weight: 500;">Заполнить компас</a>
+                <a href="#catalog" class="btn-teal">К разделу профессий</a>
+                <a href="#test" class="btn-yellow">Заполнить компас</a>
             </div>
         </div>
     </header>
 
     <section id="catalog" class="container py-5">
-        <h2 class="mb-4 d-flex align-items-center">
-            <span class="me-2">📚</span> Каталог профессий
-        </h2>
-        <p class="text-muted mb-5">Выберите направление, чтобы узнать о профессиях, задачах и навыках.</p>
-        
+        <h2 class="fw-bold mb-4">📚 Каталог профессий</h2>
         <div class="row g-4">
             <div class="col-md-4">
-                <div class="card h-100 p-4 shadow-sm border-0" style="background: #f8f9fa; border-radius: 20px;">
-                    <h5 class="fw-bold mb-3">IT и цифровые профессии</h5>
-                    <p class="text-muted small mb-4">Материалы о цифровых специальностях.</p>
-                    <button class="btn mt-auto text-white w-75" style="background-color: #2d5a61; border-radius: 10px;">Открыть раздел →</button>
+                <div class="card p-4 h-100">
+                    <h5>IT и цифра</h5>
+                    <p class="small text-muted">Разработка, ИИ и данные.</p>
+                    <button class="btn-teal mt-auto w-100">Открыть →</button>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card h-100 p-4 shadow-sm border-0" style="background: #f8f9fa; border-radius: 20px;">
-                    <h5 class="fw-bold mb-3" style="color: #2d5a61;">Медицина и здоровье</h5>
-                    <p class="text-muted small mb-4">Описания направлений в медицине.</p>
-                    <button class="btn mt-auto text-white w-75" style="background-color: #388e3c; border-radius: 10px;">Открыть раздел →</button>
+                <div class="card p-4 h-100 text-white" style="background-color: #2d5a61;">
+                    <h5>Медицина</h5>
+                    <p class="small opacity-75">Здоровье и технологии.</p>
+                    <button class="btn btn-light mt-auto w-100">Открыть →</button>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card h-100 p-4 shadow-sm border-0" style="background: #f8f9fa; border-radius: 20px;">
-                    <h5 class="fw-bold mb-3">Инженерия и производство</h5>
-                    <p class="text-muted small mb-4">Инженерные профессии и производство.</p>
-                    <button class="btn mt-auto text-white w-75" style="background-color: #2d5a61; border-radius: 10px;">Открыть раздел →</button>
+                <div class="card p-4 h-100">
+                    <h5>Инженерия</h5>
+                    <p class="small text-muted">Роботы и производство.</p>
+                    <button class="btn-teal mt-auto w-100">Открыть →</button>
                 </div>
             </div>
         </div>
     </section>
+
+    <section id="test" class="container py-5">
+        <div id="quiz-box" class="p-5 text-center shadow-sm">
+            <div id="q-step">
+                <h3 class="fw-bold mb-4">Кто ты в мире будущего?</h3>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-outline-dark" onclick="done('Технарь')">Люблю технику</button>
+                    <button class="btn btn-outline-dark" onclick="done('Творец')">Люблю искусство</button>
+                </div>
+            </div>
+            <div id="q-res" class="d-none">
+                <h3 class="text-success">Готово!</h3>
+                <p>Твое направление: <b id="res-val"></b></p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function done(val) {
+            document.getElementById('q-step').classList.add('d-none');
+            document.getElementById('q-res').classList.remove('d-none');
+            document.getElementById('res-val').innerText = val;
+        }
+    </script>
+</body>
+</html>
