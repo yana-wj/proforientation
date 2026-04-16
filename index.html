@@ -1,109 +1,77 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WayZen Career Compass</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        :root { --teal: #2d5a61; --yellow: #fbc02d; }
-        body { font-family: 'Segoe UI', sans-serif; scroll-behavior: smooth; background: #f4f7f6; }
-        .navbar { background: var(--teal) !important; }
-        .nav-link { color: white !important; cursor: pointer; }
-        .hero { background: linear-gradient(135deg, #e0f2f1 0%, #fff9c4 100%); padding: 80px 0; border-radius: 0 0 40px 40px; }
-        .section-card { background: white; border-radius: 20px; padding: 30px; margin-top: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        .btn-teal { background: var(--teal); color: white; border-radius: 10px; padding: 10px 20px; text-decoration: none; border: none; }
-        .btn-yellow { background: var(--yellow); color: var(--teal); border-radius: 10px; padding: 10px 20px; font-weight: bold; text-decoration: none; border: none; }
-        .pill { display: inline-block; margin: 5px; cursor: pointer; border: 1px solid #ddd; padding: 8px 15px; border-radius: 20px; background: white; transition: 0.3s; }
-        input[type="checkbox"]:checked + .pill { background: var(--teal); color: white; border-color: var(--teal); }
-    </style>
-</head>
-<body>
+<!-- ГЛАВНАЯ -->
+<section id="home" class="hero">
+  <h1>WayZen Career Compass</h1>
+  <p>Подбор профессии по интересам и сильным сторонам</p>
+  <button onclick="scrollToSection('jobs')">К профессиям</button>
+  <button class="yellow" onclick="scrollToSection('compass')">Заполнить компас</button>
+</section>
 
-    <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold text-white" href="#top">🧭 WayZen</a>
-            <div class="ms-auto d-flex gap-3">
-                <a class="nav-link" href="#professions">Профессии</a>
-                <a class="nav-link" href="#tasks">Задачи</a>
-                <a class="nav-link" href="#compass">Компас</a>
-            </div>
-        </div>
-    </nav>
+<!-- ПРОФЕССИИ -->
+<section id="jobs" class="cards">
+  <h2>Каталог профессий</h2>
 
-    <header id="top" class="hero text-center">
-        <div class="container">
-            <h1 class="display-4 fw-bold mb-4">WayZen Career Compass</h1>
-            <p class="text-secondary mb-5">Твой навигатор в мире профессий и реальных кейсов.</p>
-            <div class="d-flex justify-content-center gap-3">
-                <a href="#professions" class="btn-teal">К профессиям</a>
-                <a href="#compass" class="btn-yellow">Пройти тест</a>
-            </div>
-        </div>
-    </header>
+  <div class="card-container">
+    <div class="card">
+      <h3>Программист</h3>
+      <p>Создает сайты и приложения</p>
+    </div>
 
-    <section id="professions" class="container py-5">
-        <div class="section-card">
-            <h2 class="fw-bold mb-4">📚 Каталог направлений</h2>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="p-3 border rounded-4 bg-light">
-                        <h5>IT и технологии</h5>
-                        <p class="small text-muted">Спрос в КР: Очень высокий</p>
-                        <button class="btn btn-outline-dark btn-sm w-100" onclick="alert('Вы открыли раздел IT!')">Изучить направление</button>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="p-3 border rounded-4 text-white" style="background: var(--teal);">
-                        <h5>Медицина будущего</h5>
-                        <p class="small opacity-75">Спрос в мире: Растущий</p>
-                        <button class="btn btn-light btn-sm w-100" onclick="alert('Вы открыли раздел Медицины!')">Изучить направление</button>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="p-3 border rounded-4 bg-light">
-                        <h5>Креатив и дизайн</h5>
-                        <p class="small text-muted">Спрос: Стабильный</p>
-                        <button class="btn btn-outline-dark btn-sm w-100" onclick="alert('Вы открыли раздел Дизайна!')">Изучить направление</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="card">
+      <h3>Врач</h3>
+      <p>Лечит людей и спасает жизни</p>
+    </div>
 
-    <section id="tasks" class="container py-4">
-        <div class="section-card">
-            <h2 class="fw-bold mb-3">🛠 Задачи из реальной жизни</h2>
-            <div class="p-4 rounded-4" style="background: #fff9c4; border-left: 5px solid var(--yellow);">
-                <h5>Кейс: Маркетолог</h5>
-                <p>Придумай стратегию продвижения для эко-кофейни в Бишкеке.</p>
-                <button class="btn btn-dark btn-sm" onclick="alert('Ваш ответ отправлен на проверку!')">Решить задачу</button>
-            </div>
-        </div>
-    </section>
+    <div class="card">
+      <h3>Инженер</h3>
+      <p>Создает технику и системы</p>
+    </div>
+  </div>
+</section>
 
-    <section id="compass" class="container py-4 mb-5">
-        <div class="section-card text-center">
-            <h2 class="fw-bold mb-4">🧭 Компас интересов</h2>
-            <div class="mb-4">
-                <label><input type="checkbox" class="d-none"><span class="pill">🎨 Творчество</span></label>
-                <label><input type="checkbox" class="d-none"><span class="pill">💻 Кодинг</span></label>
-                <label><input type="checkbox" class="d-none"><span class="pill">📢 Общение</span></label>
-            </div>
-            <button class="btn-teal px-5 py-2" onclick="showResult()">Показать результат</button>
-            <div id="result-box" class="mt-4 h4 fw-bold text-success d-none">
-                Результат: Тебе подходит сфера Digital-маркетинга!
-            </div>
-        </div>
-    </section>
+<!-- ЗАДАЧИ -->
+<section id="tasks" class="tasks">
+  <h2>Задачи из жизни профессий</h2>
 
-    <script>
-        // Это "мозги" твоего компаса
-        function showResult() {
-            const res = document.getElementById('result-box');
-            res.classList.remove('d-none');
-            res.scrollIntoView();
-        }
-    </script>
+  <div class="card-container">
+    <div class="card">
+      <h3>Программист</h3>
+      <p>Сделать сайт для интернет-магазина</p>
+    </div>
+
+    <div class="card">
+      <h3>Врач</h3>
+      <p>Поставить диагноз пациенту</p>
+    </div>
+
+    <div class="card">
+      <h3>Инженер</h3>
+      <p>Спроектировать мост</p>
+    </div>
+  </div>
+</section>
+
+<!-- КОМПАС -->
+<section id="compass" class="compass">
+  <h2>Компас интересов</h2>
+
+  <label><input type="checkbox" value="tech"> Технологии</label>
+  <label><input type="checkbox" value="people"> Общение</label>
+  <label><input type="checkbox" value="creative"> Творчество</label>
+
+  <br><br>
+  <button onclick="getCareer()">Подобрать профессию</button>
+
+  <p id="result"></p>
+</section>
+
+<!-- СТАТИСТИКА -->
+<section class="stats">
+  <h2>Статистика</h2>
+  <p>Программист — высокая зарплата 💰</p>
+  <p>Врач — востребован во всем мире 🌍</p>
+  <p>Инженер — основа технологий ⚙️</p>
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>
