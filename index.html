@@ -6,100 +6,122 @@
     <title>WayZen Career Compass</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        :root { --teal: #2d5a61; --yellow: #fbc02d; --light: #e0f2f1; }
-        body { font-family: 'Segoe UI', sans-serif; }
-        .hero { background: linear-gradient(135deg, var(--light) 0%, #fff9c4 100%); padding: 80px 0; border-radius: 0 0 50px 50px; }
-        .section-title { font-weight: bold; color: var(--teal); margin-bottom: 30px; }
-        .card-custom { border: none; border-radius: 20px; background: #f8f9fa; transition: 0.3s; padding: 25px; height: 100%; }
-        .card-custom:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        .btn-teal { background: var(--teal); color: white; border-radius: 12px; padding: 10px 25px; border: none; }
-        .btn-yellow { background: var(--yellow); color: var(--teal); border-radius: 12px; font-weight: bold; padding: 10px 25px; border: none; }
-        .stats-badge { background: var(--light); color: var(--teal); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; }
+        :root { --teal: #2d5a61; --yellow: #fbc02d; --bg: #f4f7f6; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg); }
+        
+        /* Навигация */
+        .navbar { background-color: var(--teal) !important; padding: 15px 0; }
+        .navbar-brand, .nav-link { color: white !important; font-weight: 500; }
+        
+        /* Главный блок */
+        .hero { background: linear-gradient(135deg, #e0f2f1 0%, #fff9c4 100%); padding: 100px 0; border-radius: 0 0 50px 50px; border-bottom: 2px solid #ddd; }
+        .btn-main { background-color: var(--teal); color: white; border-radius: 12px; padding: 12px 30px; border: none; font-weight: bold; text-decoration: none; }
+        .btn-accent { background-color: var(--yellow); color: var(--teal); border-radius: 12px; padding: 12px 30px; border: none; font-weight: bold; text-decoration: none; }
+
+        /* Разделы */
+        .section-card { background: white; border-radius: 25px; padding: 35px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .prof-item { background: #fdfdfd; border: 1px solid #eee; border-radius: 15px; padding: 20px; transition: 0.3s; }
+        .prof-item:hover { border-color: var(--teal); transform: translateY(-3px); }
+
+        /* Компас (чекбоксы) */
+        .pill-check { display: inline-block; margin: 5px; }
+        .pill-check input { display: none; }
+        .pill-check span { display: block; padding: 10px 20px; background: white; border: 2px solid #ddd; border-radius: 30px; cursor: pointer; transition: 0.3s; }
+        .pill-check input:checked + span { background: var(--teal); color: white; border-color: var(--teal); }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+    <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">🧭 WayZen</a>
-            <div class="ms-auto d-flex gap-3">
-                <a href="#catalog" class="nav-link">Профессии</a>
-                <a href="#tasks" class="nav-link">Задачи</a>
-                <a href="#compass" class="nav-link fw-bold text-primary">Компас</a>
+            <a class="navbar-brand" href="#">🧭 WayZen Career Compass</a>
+            <div class="ms-auto d-flex gap-4">
+                <a class="nav-link" href="#about">Главная</a>
+                <a class="nav-link" href="#professions">Профессии</a>
+                <a class="nav-link" href="#cases">Задачи</a>
+                <a class="nav-link" href="#compass">Компас</a>
             </div>
         </div>
     </nav>
 
-    <header class="hero text-center">
+    <header id="about" class="hero text-center">
         <div class="container">
-            <h1 class="display-4 fw-bold mb-3">WayZen Career Compass</h1>
-            <p class="lead text-secondary mb-4">Твой путь от школьной скамьи до востребованного специалиста.</p>
-            <a href="#compass" class="btn-yellow text-decoration-none">Заполнить компас</a>
+            <h1 class="display-3 fw-bold text-dark mb-4">Найди свой путь в будущем</h1>
+            <p class="lead text-muted mb-5">WayZen — это навигатор по профессиям, реальные задачи от компаний и умный подбор карьеры для подростков.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#professions" class="btn-main">Смотреть профессии</a>
+                <a href="#compass" class="btn-accent">Заполнить компас</a>
+            </div>
         </div>
     </header>
 
-    <section id="catalog" class="container py-5">
-        <h2 class="section-title text-center">📚 Направления и профессии</h2>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card-custom">
-                    <span class="stats-badge mb-2">Топ 1 в мире</span>
-                    <h5 class="fw-bold">IT-сектор</h5>
-                    <p class="small text-muted">Разработчики, аналитики, ИИ-инженеры.</p>
-                    <p class="small"><b>В КР:</b> З/П от 50,000 сом</p>
-                    <button class="btn-teal w-100 mt-3">Выбрать профиль</button>
+    <section id="professions" class="container py-5 mt-4">
+        <div class="section-card">
+            <h2 class="fw-bold mb-4">📚 Каталог направлений</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="prof-item">
+                        <h5 class="fw-bold text-teal">IT и технологии</h5>
+                        <p class="small text-muted">Разработка, кибербезопасность, ИИ.</p>
+                        <hr>
+                        <p class="small"><b>Спрос в КР:</b> Очень высокий</p>
+                        <button class="btn btn-sm btn-outline-dark w-100">Изучить направление</button>
+                    </div>
                 </div>
-            </div>
-            </div>
-    </section>
-
-    <section id="tasks" class="py-5" style="background-color: #fcfcfc;">
-        <div class="container">
-            <h2 class="section-title text-center">🛠 Реальные задачи</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="card-custom text-center">
-                        <p class="text-muted">Профессия: <b>Product Manager</b></p>
-                        <h4>«Спроектируй мобильное приложение для эко-мониторинга в Бишкеке»</h4>
-                        <p class="small mt-3">Попробуй решить кейс и получи фидбек от нейросети.</p>
-                        <button class="btn btn-outline-dark">Попробовать решить</button>
+                <div class="col-md-4">
+                    <div class="prof-item" style="background: var(--teal); color: white;">
+                        <h5 class="fw-bold">Медицина будущего</h5>
+                        <p class="small opacity-75">Генетика, телемедицина, биохакинг.</p>
+                        <hr>
+                        <p class="small"><b>Спрос в мире:</b> Растущий</p>
+                        <button class="btn btn-sm btn-light w-100">Изучить направление</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="prof-item">
+                        <h5 class="fw-bold text-teal">Креатив и дизайн</h5>
+                        <p class="small text-muted">UX/UI, геймдизайн, медиа.</p>
+                        <hr>
+                        <p class="small"><b>Спрос:</b> Стабильный</p>
+                        <button class="btn btn-sm btn-outline-dark w-100">Изучить направление</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="compass" class="container py-5">
-        <div class="card-custom" style="background: var(--teal); color: white;">
-            <div class="text-center p-4">
-                <h2 class="fw-bold mb-4">🧭 Компас интересов</h2>
-                <div id="quiz-area">
-                    <p class="h5 mb-4">Что тебе нравится больше всего?</p>
-                    <div class="d-grid gap-3 col-md-6 mx-auto">
-                        <button class="btn btn-light" onclick="res('Web-разработчик')">Создавать сайты и приложения</button>
-                        <button class="btn btn-light" onclick="res('Эколог')">Защищать природу и город</button>
-                        <button class="btn btn-light" onclick="res('Маркетолог')">Придумывать рекламу и бренды</button>
-                    </div>
-                </div>
-                <div id="result-area" class="d-none">
-                    <h3>Твой список профессий:</h3>
-                    <h1 id="res-name" class="display-5 fw-bold my-4"></h1>
-                    <button class="btn btn-warning" onclick="location.reload()">Пройти еще раз</button>
-                </div>
+    <section id="cases" class="container py-4">
+        <div class="section-card">
+            <h2 class="fw-bold mb-3">🛠 Задачи из реальной жизни</h2>
+            <p class="text-muted mb-4">Попробуй себя в роли профи. Реши задачу и узнай, подходит ли тебе эта работа.</p>
+            <div class="p-4 rounded-4" style="background: #fdfae6; border-left: 5px solid var(--yellow);">
+                <h6 class="fw-bold text-uppercase text-muted">Кейс: Маркетолог</h6>
+                <h4>«Придумай стратегию запуска эко-кофейни в Бишкеке за 0 сомов»</h4>
+                <a href="#" class="btn btn-dark btn-sm mt-3">Начать решение →</a>
             </div>
         </div>
     </section>
 
-    <footer class="py-5 text-center text-muted">
-        © 2026 WayZen Team. Разработано для хакатона.
+    <section id="compass" class="container py-4 mb-5">
+        <div class="section-card text-center" style="background: linear-gradient(to right, #fff, #e0f2f1);">
+            <h2 class="fw-bold mb-2">🧭 Компас: твои интересы</h2>
+            <p class="text-muted mb-5">Отметь свои сильные стороны, и мы покажем подходящие профессии.</p>
+            
+            <div class="mb-4">
+                <label class="pill-check"><input type="checkbox"><span>🎨 Творчество</span></label>
+                <label class="pill-check"><input type="checkbox"><span>💻 Кодинг</span></label>
+                <label class="pill-check"><input type="checkbox"><span>📢 Общение</span></label>
+                <label class="pill-check"><input type="checkbox"><span>🔬 Наука</span></label>
+                <label class="pill-check"><input type="checkbox"><span>🚀 Лидерство</span></label>
+            </div>
+
+            <button class="btn-main px-5 py-3 mt-3" onclick="alert('Анализируем... Тебе стоит присмотреться к Project Management в IT!')">Показать мой результат</button>
+        </div>
+    </section>
+
+    <footer class="text-center py-5 text-muted">
+        <p>© 2026 WayZen Team. Разработано для Хакатона Бишкек.</p>
     </footer>
 
-    <script>
-        function res(name) {
-            document.getElementById('quiz-area').classList.add('d-none');
-            document.getElementById('result-area').classList.remove('d-none');
-            document.getElementById('res-name').innerText = name;
-        }
-    </script>
 </body>
 </html>
