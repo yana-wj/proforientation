@@ -6,83 +6,99 @@
     <title>WayZen Career Compass</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        :root { --dark-teal: #2d5a61; --accent-yellow: #fbc02d; }
-        body { font-family: 'Segoe UI', sans-serif; background-color: #fff; }
-        .hero { background: linear-gradient(135deg, #e0f2f1 0%, #fff9c4 100%); padding: 60px 0; border-radius: 0 0 50px 50px; }
-        .btn-teal { background-color: var(--dark-teal); color: white; border-radius: 12px; padding: 12px 25px; border: none; text-decoration: none; display: inline-block; }
-        .btn-yellow { background-color: var(--accent-yellow); color: var(--dark-teal); border-radius: 12px; padding: 12px 25px; border: none; font-weight: bold; text-decoration: none; display: inline-block; }
-        .card { border: none; border-radius: 20px; background: #f8f9fa; transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        #quiz-box { background: white; border-radius: 30px; border: 2px solid #e0f2f1; max-width: 600px; margin: 0 auto; }
+        :root { --teal: #2d5a61; --yellow: #fbc02d; --light: #e0f2f1; }
+        body { font-family: 'Segoe UI', sans-serif; }
+        .hero { background: linear-gradient(135deg, var(--light) 0%, #fff9c4 100%); padding: 80px 0; border-radius: 0 0 50px 50px; }
+        .section-title { font-weight: bold; color: var(--teal); margin-bottom: 30px; }
+        .card-custom { border: none; border-radius: 20px; background: #f8f9fa; transition: 0.3s; padding: 25px; height: 100%; }
+        .card-custom:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .btn-teal { background: var(--teal); color: white; border-radius: 12px; padding: 10px 25px; border: none; }
+        .btn-yellow { background: var(--yellow); color: var(--teal); border-radius: 12px; font-weight: bold; padding: 10px 25px; border: none; }
+        .stats-badge { background: var(--light); color: var(--teal); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">🧭 WayZen Career Compass</a>
+            <a class="navbar-brand fw-bold" href="#">🧭 WayZen</a>
+            <div class="ms-auto d-flex gap-3">
+                <a href="#catalog" class="nav-link">Профессии</a>
+                <a href="#tasks" class="nav-link">Задачи</a>
+                <a href="#compass" class="nav-link fw-bold text-primary">Компас</a>
+            </div>
         </div>
     </nav>
 
     <header class="hero text-center">
         <div class="container">
-            <h1 class="display-4 fw-bold mb-4">WayZen Career Compass</h1>
-            <p class="lead text-secondary mb-5">Материалы о профессиях, практические задачи и подбор ресурсов.</p>
-            <div class="d-flex justify-content-center gap-3">
-                <a href="#catalog" class="btn-teal">К разделу профессий</a>
-                <a href="#test" class="btn-yellow">Заполнить компас</a>
-            </div>
+            <h1 class="display-4 fw-bold mb-3">WayZen Career Compass</h1>
+            <p class="lead text-secondary mb-4">Твой путь от школьной скамьи до востребованного специалиста.</p>
+            <a href="#compass" class="btn-yellow text-decoration-none">Заполнить компас</a>
         </div>
     </header>
 
     <section id="catalog" class="container py-5">
-        <h2 class="fw-bold mb-4">📚 Каталог профессий</h2>
+        <h2 class="section-title text-center">📚 Направления и профессии</h2>
         <div class="row g-4">
             <div class="col-md-4">
-                <div class="card p-4 h-100">
-                    <h5>IT и цифра</h5>
-                    <p class="small text-muted">Разработка, ИИ и данные.</p>
-                    <button class="btn-teal mt-auto w-100">Открыть →</button>
+                <div class="card-custom">
+                    <span class="stats-badge mb-2">Топ 1 в мире</span>
+                    <h5 class="fw-bold">IT-сектор</h5>
+                    <p class="small text-muted">Разработчики, аналитики, ИИ-инженеры.</p>
+                    <p class="small"><b>В КР:</b> З/П от 50,000 сом</p>
+                    <button class="btn-teal w-100 mt-3">Выбрать профиль</button>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card p-4 h-100 text-white" style="background-color: #2d5a61;">
-                    <h5>Медицина</h5>
-                    <p class="small opacity-75">Здоровье и технологии.</p>
-                    <button class="btn btn-light mt-auto w-100">Открыть →</button>
-                </div>
             </div>
-            <div class="col-md-4">
-                <div class="card p-4 h-100">
-                    <h5>Инженерия</h5>
-                    <p class="small text-muted">Роботы и производство.</p>
-                    <button class="btn-teal mt-auto w-100">Открыть →</button>
+    </section>
+
+    <section id="tasks" class="py-5" style="background-color: #fcfcfc;">
+        <div class="container">
+            <h2 class="section-title text-center">🛠 Реальные задачи</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card-custom text-center">
+                        <p class="text-muted">Профессия: <b>Product Manager</b></p>
+                        <h4>«Спроектируй мобильное приложение для эко-мониторинга в Бишкеке»</h4>
+                        <p class="small mt-3">Попробуй решить кейс и получи фидбек от нейросети.</p>
+                        <button class="btn btn-outline-dark">Попробовать решить</button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="test" class="container py-5">
-        <div id="quiz-box" class="p-5 text-center shadow-sm">
-            <div id="q-step">
-                <h3 class="fw-bold mb-4">Кто ты в мире будущего?</h3>
-                <div class="d-grid gap-2">
-                    <button class="btn btn-outline-dark" onclick="done('Технарь')">Люблю технику</button>
-                    <button class="btn btn-outline-dark" onclick="done('Творец')">Люблю искусство</button>
+    <section id="compass" class="container py-5">
+        <div class="card-custom" style="background: var(--teal); color: white;">
+            <div class="text-center p-4">
+                <h2 class="fw-bold mb-4">🧭 Компас интересов</h2>
+                <div id="quiz-area">
+                    <p class="h5 mb-4">Что тебе нравится больше всего?</p>
+                    <div class="d-grid gap-3 col-md-6 mx-auto">
+                        <button class="btn btn-light" onclick="res('Web-разработчик')">Создавать сайты и приложения</button>
+                        <button class="btn btn-light" onclick="res('Эколог')">Защищать природу и город</button>
+                        <button class="btn btn-light" onclick="res('Маркетолог')">Придумывать рекламу и бренды</button>
+                    </div>
                 </div>
-            </div>
-            <div id="q-res" class="d-none">
-                <h3 class="text-success">Готово!</h3>
-                <p>Твое направление: <b id="res-val"></b></p>
+                <div id="result-area" class="d-none">
+                    <h3>Твой список профессий:</h3>
+                    <h1 id="res-name" class="display-5 fw-bold my-4"></h1>
+                    <button class="btn btn-warning" onclick="location.reload()">Пройти еще раз</button>
+                </div>
             </div>
         </div>
     </section>
+
+    <footer class="py-5 text-center text-muted">
+        © 2026 WayZen Team. Разработано для хакатона.
+    </footer>
 
     <script>
-        function done(val) {
-            document.getElementById('q-step').classList.add('d-none');
-            document.getElementById('q-res').classList.remove('d-none');
-            document.getElementById('res-val').innerText = val;
+        function res(name) {
+            document.getElementById('quiz-area').classList.add('d-none');
+            document.getElementById('result-area').classList.remove('d-none');
+            document.getElementById('res-name').innerText = name;
         }
     </script>
 </body>
